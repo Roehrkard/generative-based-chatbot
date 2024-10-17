@@ -53,7 +53,7 @@ def generate_answer(question, context):
     answer_end = torch.argmax(answer_end_scores) + 1
 
     # Confidence threshold
-    confidence_threshold = 0.4  # Lowered to allow more responses
+    confidence_threshold = 0.4
 
     # Check if the answer is valid
     start_score = answer_start_scores[0, answer_start].item()
