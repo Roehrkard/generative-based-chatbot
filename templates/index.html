@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQuAD QA Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        #chat-window {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: auto;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-right: 5px;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SQuAD Generative Chatbot</h1>
+    <div id="chat-window"></div>
+    <input type="text" id="user-input" placeholder="Ask a question...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const userMessage = document.getElementById("user-input").value;
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            });
+            const data = await response.json();
+            const chatWindow = document.getElementById("chat-window");
+
+            chatWindow.innerHTML += `<p><b>You:</b> ${userMessage}</p>`;
+            chatWindow.innerHTML += `<p><b>Bot:</b> ${data.response}</p>`;
+
+            document.getElementById("user-input").value = "";  // Clear input
+        }
+    </script>
+</body>
+</html>
