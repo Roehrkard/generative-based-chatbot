@@ -94,8 +94,7 @@ What are the symptoms of the flu?
 3. Launch a terminal and navigate to the project folder
 
 4. Enter the command
-```python app.py
-```
+```python app.py```
 
 5. visit http://127.0.0.1:5000/
 
