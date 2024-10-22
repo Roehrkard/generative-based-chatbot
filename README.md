@@ -94,8 +94,7 @@ What are the symptoms of the flu?
 3. Launch a terminal and navigate to the project folder
 
 4. Enter the command
-```python app.py
-```
+```python app.py```
 
 5. visit http://127.0.0.1:5000/
 
@@ -111,8 +110,8 @@ What are the symptoms of the flu?
 ### Option 4: Gradio Generative Chatbot Web Interface
 
 1. Run the following Colab script
-- Gardio interface, Version that includes context for each answer:
-    - https://colab.research.google.com/drive/1h5Z5ZAttYBXGlRjyjJKXylK9TqDP7YuM?usp=sharing
+- Gardio Web-based interface with multi-turn capabilities (Shows full conversation):
+    - https://colab.research.google.com/drive/1X_YKaagMb0mNp-KMjWfv1NLNt9sCnNBI?usp=sharing
 
 2. Visit running Gradio server
     - https://80d9500beec42ba879.gradio.live/
